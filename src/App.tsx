@@ -1,16 +1,17 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  // Use the function exported from wasm
+  let msg = window.sayHi();
+
   return (
     <div>
       <button
         onClick={() => {
-          alert(`Result from WebAssembly: ${window.myGolangFunction(2, 3)}`);
+          alert(msg);
         }}
       >
-        Click here to invoke WebAssembly
+        sayHi
       </button>
     </div>
   );
